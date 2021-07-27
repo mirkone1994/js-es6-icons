@@ -1,3 +1,5 @@
+Vue.config.devtools = true;
+console.log("vue", Vue);
 const renderIcons = (icons, targetElement) => {
     let iconsTemplate = "";
     icons.forEach((icon, index) => {
@@ -14,3 +16,15 @@ const renderIcons = (icons, targetElement) => {
 
 const cardSection = document.querySelector("#icons .row");
 renderIcons(icons, cardSection);
+
+const selectField = document.getElementById("type-filter");
+
+selectField.addEventListener("change", () => {
+    const filterValue = selectField.value;
+    if(filterValue === "all"){
+        renderIcons(icons, cardSection);
+        return;
+    }
+    const filteredIcons = icons.filter((icon) => filterValue === icon.type);
+    renderIcons(filteredIcons, cardSection);
+});
