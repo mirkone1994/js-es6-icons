@@ -25,7 +25,7 @@ console.log("iconTypes:", iconTypes);
 
 let options = '<option selected value="all">all</option>';
 iconTypes.forEach((type) => {
-    options += ` <option value="${type}">${type}</option`;
+    options += ` <option value="${type}">${type}</option>`;
 })
 targetElement.innerHTML = options;
 
