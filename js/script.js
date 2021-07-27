@@ -14,10 +14,29 @@ const renderIcons = (icons, targetElement) => {
     
 };
 
+const renderOptions = (iconsArray, targetElement) => {
+    const iconTypes = [];
+iconsArray.forEach((icon) => {
+    if (!iconTypes.includes(icon.type)) {
+        iconTypes.push(icon.type);
+    }
+});
+console.log("iconTypes:", iconTypes);
+
+let options = '<option selected value="all">all</option>';
+iconTypes.forEach((type) => {
+    options += ` <option value="${type}">${type}</option`;
+})
+targetElement.innerHTML = options;
+
+}
+
 const cardSection = document.querySelector("#icons .row");
 renderIcons(icons, cardSection);
 
 const selectField = document.getElementById("type-filter");
+
+renderOptions(icons, selectField);
 
 selectField.addEventListener("change", () => {
     const filterValue = selectField.value;
@@ -28,3 +47,6 @@ selectField.addEventListener("change", () => {
     const filteredIcons = icons.filter((icon) => filterValue === icon.type);
     renderIcons(filteredIcons, cardSection);
 });
+
+
+
