@@ -4,3 +4,12 @@
 #icons {
     min-height: calc(100vh - 105.6px);
 }
+.animal {
+    color: blue;
+}
+.vegetable {
+    color: gold;
+}
+.user {
+    color: purple;
+}

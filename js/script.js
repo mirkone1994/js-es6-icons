@@ -5,7 +5,7 @@ const renderIcons = (icons, targetElement) => {
     icons.forEach((icon, index) => {
         iconsTemplate += `
         <div class="col-2 text-center bg-white rounded-3">
-            <i class="${icon.family} ${icon.prefix}${icon.name} fa-2x"></i>
+            <i class="${icon.family} ${icon.prefix}${icon.name} fa-2x ${icon.type}"></i>
             <h6>${icon.name.toUpperCase()}</h6>
         </div>        
         `;
